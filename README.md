@@ -4,7 +4,7 @@ This mod is an installation script for Artur's [DLSS Enabler](https://github.com
 ## Installation
 Run this command in the terminal
 ```sh
-curl https://raw.githubusercontent.com/FakeMichau/fgmod/main/prepare.sh | bash --
+curl https://raw.githubusercontent.com/rcelha/fgmod/refs/heads/main/prepare.sh | bash --
 ```
 This will create a folder called ``fgmod`` in your home directory with a wrapper ``fgmod`` inside of it.
 
