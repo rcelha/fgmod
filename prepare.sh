@@ -50,7 +50,20 @@ chmod +x NVIDIA-Linux-x86_64-$nvidiaver.run
 ./NVIDIA-Linux-x86_64-$nvidiaver.run -x
 
 chmod +x innoextract
+
 ./innoextract dlss-enabler-setup-$enablerver.exe
+
+# Extract specific components to make sure we will override duplicate files
+# with dllversion and optiscaler 0.7
+COMPONENTS=$(cat <<EOF
+mainfiles\\dllversion
+upscalers\\opti7
+EOF
+)
+for component in $COMPONENTS; do
+    echo -e "Extracting DLSS Enabler Component: \e[32m${component}\e[0m"
+    ./innoextract dlss-enabler-setup-$enablerver.exe --component $component
+done;
 
 # Prepare mod files
 mv app/* .
